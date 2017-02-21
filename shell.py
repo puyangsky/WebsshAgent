@@ -4,6 +4,7 @@ import sys
 
 def run():
 	#url = os.popen('echo $url').read().strip('\n')
+	# TO-DO: 认证问题
 	url = ""
 	try:
 		url = os.environ['url']
@@ -19,8 +20,10 @@ def run():
 		sys.exit()
                 #print "[Warn] Container name cannot be none!"
 
-	while True:
-		#os.system('/bin/bash')
+	#while True:
+	# TO-DO: 是否所有镜像都支持/bin/bash命令
+	os.system('sudo docker exec -it ' + container_name + " /bin/bash")
+		'''
 		current_path = os.popen("sudo docker exec " +container_name + " pwd").read().strip('\n')
 		current_user = os.popen("sudo docker exec " +container_name + " whoami").read().strip('\n')
 		hostname = os.popen("sudo docker exec " +container_name + " hostname").read().strip('\n')
@@ -40,7 +43,7 @@ def run():
 				if not line:
 					break
 				print line.strip('\n')
-
+		'''
 def main():
 	try:
 		run()
