@@ -43,4 +43,6 @@ shellinabox有一个启动参数-s可以指定打开什么服务，并且在该�
 这里我的思路是利用python的os包下的popen方法，该方法可以执行系统命令并且返回结果。
 
 
+## 启动shellinabox
 
+	shellinaboxd -t -s '/dcloud:root:root:/:b=${home} url=${url} /root/shell/WebsshAgent/dist/shell/shell' --css=/usr/share/shellinabox/white-on-black.css -b
